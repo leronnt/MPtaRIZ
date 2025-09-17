@@ -3,3 +3,8 @@ class mtlab1 {
     System.out.println("Its works");
     }
 }
+
+
+
+
+//New Word
