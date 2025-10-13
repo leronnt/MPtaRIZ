@@ -13,7 +13,7 @@ class mtlab1 {
         int step = 3;
 
         int[][] array = Array2D(rows, cols, startValue, step);
-        print2DArray(array);
+        //print2DArray(array);
     }
 
     //пирамида
@@ -46,19 +46,14 @@ class mtlab1 {
                 value += step;
             }
         }
-
-        return arr;
-    }
-
-    //2D масив
-    public static void print2DArray(int[][] arr) {
         for (int[] row : arr) {
             for (int num : row) {
                 System.out.printf("%8d", num);
             }
             System.out.println();
         }
-    }
+        return arr;
+    } 
 }
 
 
