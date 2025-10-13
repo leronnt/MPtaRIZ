@@ -13,7 +13,6 @@ class mtlab1 {
         int step = 3;
 
         int[][] array = Array2D(rows, cols, startValue, step);
-        //print2DArray(array);
     }
 
     //пирамида
