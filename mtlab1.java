@@ -2,9 +2,9 @@ class mtlab1 {
     public static void main(String[] args) {
         System.out.println("It's work");
 
-        int levels = 6; //этажи пирамиды
+        int levels = 6;
         System.out.println("\n1) Ялинка у вигляді піраміди:");
-        printTree(levels);
+        Piramid.printTree(levels);
 
         System.out.println("\n2) Двовимірний масив:");
         int rows = 3;
@@ -12,29 +12,30 @@ class mtlab1 {
         int startValue = 0;
         int step = 3;
 
-        int[][] array = Array2D(rows, cols, startValue, step);
+        int[][] array = Array2DGenerator.Array2D(rows, cols, startValue, step);
     }
+}
 
-    //пирамида
+class Piramid {
     public static void printTree(int levels) {
         for (int i = 0; i < levels; i++) {
-            int stars = 2 * i + 1;      
-            int spaces = levels - i - 1; 
+            int stars = 2 * i + 1;
+            int spaces = levels - i - 1;
 
-            
             for (int j = 0; j < spaces; j++) {
                 System.out.print("_");
             }
 
-            
             for (int j = 0; j < stars; j++) {
                 System.out.print("*");
             }
-            System.out.println(); 
+
+            System.out.println();
         }
     }
+}
 
-    //2D масив создание
+class Array2DGenerator {
     public static int[][] Array2D(int rows, int cols, int startValue, int step) {
         int[][] arr = new int[rows][cols];
         int value = startValue;
@@ -45,17 +46,17 @@ class mtlab1 {
                 value += step;
             }
         }
+
         for (int[] row : arr) {
             for (int num : row) {
                 System.out.printf("%8d", num);
             }
             System.out.println();
         }
+
         return arr;
-    } 
+    }
 }
-
-
 
 //New Word
 //Add
