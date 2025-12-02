@@ -4,7 +4,9 @@ class mtlab1 {
 
         int levels = 6;
         System.out.println("\n1) Ялинка у вигляді піраміди:");
-        Piramid.printTree(levels);
+
+        Piramid piramid = new Piramid();   
+        piramid.printTree(levels);
 
         System.out.println("\n2) Двовимірний масив:");
         int rows = 3;
@@ -12,12 +14,14 @@ class mtlab1 {
         int startValue = 0;
         int step = 3;
 
-        int[][] array = Array2DGenerator.Array2D(rows, cols, startValue, step);
+        Array2DGenerator generator = new Array2DGenerator();
+        int[][] array = generator.Array2D(rows, cols, startValue, step);
+
     }
 }
 
 class Piramid {
-    public static void printTree(int levels) {
+    public void printTree(int levels) {
         for (int i = 0; i < levels; i++) {
             int stars = 2 * i + 1;
             int spaces = levels - i - 1;
@@ -36,7 +40,7 @@ class Piramid {
 }
 
 class Array2DGenerator {
-    public static int[][] Array2D(int rows, int cols, int startValue, int step) {
+    public int[][] Array2D(int rows, int cols, int startValue, int step) {
         int[][] arr = new int[rows][cols];
         int value = startValue;
 
