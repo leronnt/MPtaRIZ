@@ -1,0 +1,37 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide circle
+
+class mtlab1 {
+  +{static} main(args: String[]): void
+}
+
+class GameBoard {
+  -board: char[][]
+  -EMPTY_CELL: char
+  -SIZE: int
+  --
+  +GameBoard()
+  +printBoard(): void
+  +updateCell(row: int, col: int, symbol: char): boolean
+  +checkWin(symbol: char): boolean
+  +isFull(): boolean
+}
+
+class Player {
+  -name: String
+  -symbol: char
+  -scanner: Scanner
+  --
+  +Player(name: String, symbol: char, scanner: Scanner)
+  +makeMove(message: String): int
+  +getName(): String
+  +getSymbol(): char
+  +printInfo(): void
+}
+
+mtlab1 --> GameBoard
+mtlab1 --> Player
+Player --> Scanner
+
+@enduml
