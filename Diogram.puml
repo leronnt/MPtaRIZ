@@ -1,37 +1,39 @@
 @startuml
 skinparam classAttributeIconSize 0
 hide circle
+skinparam linetype ortho
 
 class mtlab1 {
   +{static} main(args: String[]): void
 }
 
 class GameBoard {
-  -board: char[][]
-  -EMPTY_CELL: char
-  -SIZE: int
+  - board: char[][]
+  - EMPTY_CELL: char
+  - SIZE: int
   --
-  +GameBoard()
-  +printBoard(): void
-  +updateCell(row: int, col: int, symbol: char): boolean
-  +checkWin(symbol: char): boolean
-  +isFull(): boolean
+  + GameBoard()
+  + printBoard(): void
+  + updateCell(row: int, col: int, symbol: char): boolean
+  + checkWin(symbol: char): boolean
+  + isFull(): boolean
 }
 
 class Player {
-  -name: String
-  -symbol: char
-  -scanner: Scanner
+  - name: String
+  - symbol: char
+  - scanner: Scanner
   --
-  +Player(name: String, symbol: char, scanner: Scanner)
-  +makeMove(message: String): int
-  +getName(): String
-  +getSymbol(): char
-  +printInfo(): void
+  + Player(name: String, symbol: char, scanner: Scanner)
+  + getName(): String
+  + getSymbol(): char
+  + makeMove(message: String): int
+  + printInfo(): void
 }
 
-mtlab1 --> GameBoard
-mtlab1 --> Player
-Player --> Scanner
+' Связи между классами
+mtlab1 ..> GameBoard : создает и использует
+mtlab1 ..> Player : создает и использует
+Player --> "1" java.util.Scanner : использует для ввода
 
 @enduml

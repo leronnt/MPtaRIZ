@@ -25,7 +25,7 @@ class GameBoard {
     }
 
     public boolean updateCell(int row, int col, char symbol) { 
-        // тут перевіряємо, чи введена 1-3)
+        // введена 1-3)
         if (row < 1 || row > SIZE || col < 1 || col > SIZE) return false; 
         
         // Перевірка на зайнятість
@@ -35,14 +35,14 @@ class GameBoard {
         return true;
     }
 
-    //Перевірка на перемогу.
+    //Перемога.
      
     public boolean checkWin(char symbol) {
-        // Перевірка рядків і стовпців
+        //Перевірка рядків і стовпців
         for (int i = 0; i < SIZE; i++) {
-            // Рядки
+            //Рядки
             if (board[i][0] == symbol && board[i][1] == symbol && board[i][2] == symbol) return true;
-            // Стовпці
+            //Стовпці
             if (board[0][i] == symbol && board[1][i] == symbol && board[2][i] == symbol) return true;
         }
 
